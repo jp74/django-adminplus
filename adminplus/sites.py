@@ -33,14 +33,14 @@ class AdminPlusMixin(object):
         * `view` is any view function you can imagine.
         """
         if view is not None:
-            if is_class_based_view(view):
-                view = view.as_view()
+            # if is_class_based_view(view):
+            #     view = view.as_view()
             self.custom_views.append((path, view, name, urlname, visible))
             return
 
         def decorator(fn):
-            if is_class_based_view(fn):
-                fn = fn.as_view()
+            # if is_class_based_view(fn):
+            #     fn = fn.as_view()
             self.custom_views.append((path, fn, name, urlname, visible))
             return fn
         return decorator
