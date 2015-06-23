@@ -1,7 +1,9 @@
+import inspect
+
 from django.contrib.admin.sites import AdminSite
 from django.utils.text import capfirst
 from django.views.generic import View
-import inspect
+
 
 def is_class_based_view(view):
     return inspect.isclass(view) and issubclass(view, View)
